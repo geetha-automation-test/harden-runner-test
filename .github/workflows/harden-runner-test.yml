@@ -11,12 +11,8 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@v2
         with:
-          egress-policy: audit
+          egress-policy: block
 
       - name: Make outbound request
         run: |
           curl -I https://example.com
-
-      - name: Make new outbound request
-        run: |
-          curl -I https://httpbin.org/get
