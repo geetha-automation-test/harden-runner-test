@@ -13,7 +13,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            example.com
+            httpbin.org/get
 
       - name: Make outbound request
         run: |
