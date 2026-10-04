@@ -1,0 +1,22 @@
+name: Harden Runner Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  network-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
+      - name: Make outbound request
+        run: |
+          curl -I https://example.com
+
+      - name: Make new outbound request
+        run: |
+          curl -I https://httpbin.org/get
