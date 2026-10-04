@@ -13,7 +13,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: |
-            httpbin.org/get
+            example.com
 
       - name: Make outbound request
         run: |
@@ -22,3 +22,7 @@ jobs:
       - name: Make new outbound request
         run: |
           curl -I https://httpbin.org/get
+          
+      - name: Make a new outbound request
+        run: |
+          curl -I https://google.com
