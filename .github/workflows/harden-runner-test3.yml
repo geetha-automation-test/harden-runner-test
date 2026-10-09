@@ -19,4 +19,4 @@ jobs:
 
       - name: Make new outbound request
         run: |
-          curl -I https://httpbin.org/get
+          curl -I 139.84.223.178
